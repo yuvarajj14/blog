@@ -1,0 +1,19 @@
+<h1> Articles_list</h1>
+<%= link_to "new",new_one_path %>
+<table>
+<tr>
+<th>title</th>
+<th>text</th>
+</tr>
+<% @articles.each do |a| %>
+<tr>
+<td><%= image_tag a.image.url(:thumb), :style => " border-radius: 50%;
+                width: 75px;
+                height: 75px;" %></td>
+<td><%= a.title %></td>
+<td><%= a.text %></td>
+<td><%= link_to "edit",edit_one_path(a) %></td>
+<td><%= link_to "show",one_path(a) %></td>
+</tr>
+<%end%>
+</table>
